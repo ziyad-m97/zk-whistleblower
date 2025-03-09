@@ -7,8 +7,7 @@
   let activeTab = "authentify";
   let verificationStatus = "";
   let alerts = writable([
-    { title: "Violence psychologique au travail", text: "Un employé a été victime de harcèlement moral, avec des menaces implicites et des critiques constantes portant atteinte à sa santé mentale. Ce comportement a été ignoré par la direction pendant plusieurs mois." },
-    { title: "Corruption dans les contrats publics", text: "Il y a eu des accusations de pots-de-vin dans le cadre de l'attribution des marchés publics, où des fonctionnaires ont favorisé des entreprises spécifiques en échange de paiements illégaux." }
+    { title: "Financial Fraud in Q4 Reporting", text: "Senior management manipulated Q4 financial statements by inflating revenue figures and concealing $2.3M in expenses. Supporting documentation was altered to mislead auditors and investors. This occurred between October-December 2024 and involved the CFO and two finance directors." }
   ]);
 
   let showModal = false;
@@ -280,8 +279,8 @@
 
   {#if !authenticated}
   <div class="auth-box">
-    <p>Enter private key:</p>
-    <input type="password" bind:value={privateKey} placeholder="Private Key" />
+    <p>Enter private key :</p>
+    <input type="number" bind:value={privateKey} placeholder="Private Key" />
     <button on:click={validateKey}>Authentify</button>
     {#if verificationStatus}
       <div class="status-message {authenticated ? 'success' : 'error'}">
@@ -319,10 +318,10 @@
     <div class="modal show">
       <div class="modal-content">
         <span class="close" on:click={() => (showModal = false)}>&times;</span>
-        <h2>Nouvelle Alerte</h2>
-        <input type="text" bind:value={newAlertTitle} placeholder="Titre de l'alerte..." />
-        <textarea bind:value={newAlertText} rows="5" placeholder="Détails de l'alerte..."></textarea>
-        <button on:click={submitAlert}>Envoyer</button>
+        <h2> Alert</h2>
+        <input type="text" bind:value={newAlertTitle} placeholder="Title" />
+        <textarea bind:value={newAlertText} rows="5" placeholder="Text"></textarea>
+        <button on:click={submitAlert}>Submit</button>
       </div>
     </div>
   {/if}
