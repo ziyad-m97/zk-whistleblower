@@ -15,8 +15,14 @@
   let newAlertTitle = "";
   let newAlertText = "";
 
-  // Known valid commitment from our generated key
-  const VALID_COMMITMENT = "22521918426460577420601731098712395461695412347126447700264839639171906455234";
+  // List of valid commitments for our 5 users
+  const VALID_COMMITMENTS = [
+    "2734036284392727479853899077762122337623296282371945742738835164904890170311",
+    "2321478515762014168559363437710915598412108051241564560118652143711055701834",
+    "8666843847536731435524717447634722451056074249632382408282620992874859271444",
+    "18065181644694098491884201615695052475542502648859735574683624528755051083823",
+    "18913834321776654036051989032765033341429370907386993951960999681382623778011"
+  ];
 
   function computeCommitment(privateKeyStr) {
     try {
@@ -30,7 +36,7 @@
   async function validateKey() {
     try {
       const commitment = computeCommitment(privateKey);
-      if (commitment === VALID_COMMITMENT) {
+      if (VALID_COMMITMENTS.includes(commitment)) {
         authenticated = true;
         activeTab = "readAlerts";
         verificationStatus = "Private key verified successfully!";

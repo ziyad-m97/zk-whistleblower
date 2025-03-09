@@ -1,0 +1,46 @@
+# ZK Whistleblower - Requirements
+
+## System Requirements
+- Node.js (v18+)
+- npm (v9+)
+
+## Frontend Dependencies (UI)
+- Svelte: ^4.2.9
+- o1js: ^0.15.1
+
+## Backend Dependencies (Contracts)
+- o1js: ^0.15.1
+- express: ^4.18.2
+- cors: ^2.8.5
+- ts-node: ^10.9.2
+- typescript: ^5.2.2
+
+## Development Tools
+- vite: ^6.2.1
+- @sveltejs/kit: ^2.0.0
+- @sveltejs/vite-plugin-svelte: ^3.0.0
+
+## Installation Instructions
+1. Clone the repository
+2. Install backend dependencies:
+   ```
+   cd contracts
+   npm install
+   ```
+3. Install frontend dependencies:
+   ```
+   cd ui
+   npm install
+   ```
+
+## Running the Application
+1. Start the frontend:
+   ```
+   cd ui
+   npm run dev
+   ```
+2. Generate keys:
+   ```
+   cd contracts
+   node --loader ts-node/esm src/generateMultipleKeys.ts
+   ```

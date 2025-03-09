@@ -2,7 +2,7 @@ import { SmartContract, state, State, method, Field, Poseidon } from 'o1js';
 import { IdentityMerkleWitness } from './VerifyUser.js';
 
 export class WhistleblowingZkApp extends SmartContract {
-  @state(Field) allowedUsersRoot = State<Field>() ;
+  @@state(Field) allowedUsersRoot = State<Field>() ;
   
 
   @method init() {
